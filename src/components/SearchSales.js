@@ -12,8 +12,22 @@ export const SearchSales = (props, { _name, _count }) => {
   const onClick = () => {
     Mobx.increment();
     setCount(count + 1);
-    setName("Hello World");
+    setName("Emba");
   };
 
-  return <Observer>{() => <h1>Hello {name} Wellcome to MobX</h1>}</Observer>;
+  return (
+    <Observer>
+      {() => (
+        <div>
+          <h1>Hello {name} Wellcome to MobX</h1>
+          <form>
+            <input id="saleNo" name="saleNumber" placeholder="BKK-00000" />
+            <button type="button" onClick={onClick}>
+              Search
+            </button>
+          </form>
+        </div>
+      )}
+    </Observer>
+  );
 };

@@ -2,13 +2,13 @@ import React from "react";
 import { Router, Route } from "react-router";
 
 /** Component */
-import { Toggle } from "./components/Toggle";
-import { SearchSales } from "./components/SearchSales";
+import App from "./App";
+import Sales from "./components/Sales";
 
 const Routes = props => (
   <Router {...props}>
-    <Route exact path="/" component={Toggle} />
-    <Route path="/Sales" component={SearchSales} />
+    <Route exact path="/" component={App} />
+    <Route path="/sales" component={Sales} />
   </Router>
 );
 
