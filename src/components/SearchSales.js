@@ -9,11 +9,11 @@ export const SearchSales = (props, { _name, _count }) => {
 
   useEffect(() => {}, [count]);
 
-//   const onClick = () => {
-//     Mobx.increment();
-//     setCount(count + 1);
-//     setName("Hello World");
-//   };
+  const onClick = () => {
+    Mobx.increment();
+    setCount(count + 1);
+    setName("Hello World");
+  };
 
   return <Observer>{() => <h1>Hello {name} Wellcome to MobX</h1>}</Observer>;
 };
