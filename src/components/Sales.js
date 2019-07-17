@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-// import logo from "./logo.svg";
-// import './App.css';
+import logo from "../logo.svg";
 import { observer } from "mobx-react";
-import Mobx from "../mobx/Mobx";
+import Mobx from "../mobx/TestStore";
 import { SearchSales } from "./SearchSales";
 
 @observer
@@ -28,10 +27,8 @@ class Sales extends Component {
       <div className="App">
         <header className="App-header">
           {Mobx.getCount}
-          {/* <img src={logo} className="App-logo" alt="logo" /> */}
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
+          <img src={logo} className="App-logo" alt="logo" />
+
           <a
             className="App-link"
             href="https://reactjs.org"
@@ -40,7 +37,15 @@ class Sales extends Component {
           >
             {/* Learn React {Mobx.getCount} */}
           </a>
-          {!time && <SearchSales _name="Emba" _count="0" />}
+          {!time && (
+            <SearchSales
+              _fname="Yuttana"
+              _lname="Phi"
+              _title={() => {
+                return `Wellcome to MobX`;
+              }}
+            />
+          )}
           {/* <input value={Mobx.getName} onChange={e => Mobx.setName(e.target.value)} /> */}
         </header>
       </div>

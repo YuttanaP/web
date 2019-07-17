@@ -1,27 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { observer } from 'mobx-react';
-import Mobx from './mobx/Mobx';
-import { Toggle } from './components/Toggle';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { observer } from "mobx-react";
+import Mobx from "./mobx/Mobx";
+import { Toggle } from "./components/Toggle";
 
 @observer
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       time: 0,
       count: 0
-    }
+    };
   }
 
   componentDidMount = () => {
     // setTimeout(() => {
     //   this.setState({ time: 1 })
     // }, 3000)
-  }
-
+  };
 
   render() {
     let { time } = this.state;
@@ -41,7 +40,15 @@ class App extends Component {
           >
             {/* Learn React {Mobx.getCount} */}
           </a>
-          {!time && <Toggle _name={Mobx.name} _count={2} />}
+          {!time && (
+            <Toggle
+              _name={Mobx.name}
+              _count={2}
+              _getTitle={() => {
+                return `"This is functions"`;
+              }}
+            />
+          )}
           {/* <input value={Mobx.getName} onChange={e => Mobx.setName(e.target.value)} /> */}
         </header>
       </div>

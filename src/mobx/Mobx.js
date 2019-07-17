@@ -1,27 +1,29 @@
 import { action, computed, observable } from "mobx";
 
 class Mobx {
+  @observable name = "hello, mobx";
+  @observable count = 0;
+  @observable title = "Title name";
 
-    @observable name = 'hello, mobx';
-    @observable count = 0;
+  //@action is something to change the state.
+  @action increment() {
+    this.count += 1;
+  }
 
-    @action increment() {
-        this.count += 1;
-    }
+  @action setName(name) {
+    this.name = name;
+  }
 
-    @action setName(name) {
-        this.name = name;
-    }
+  //@compute is something to not change the state.
+  @computed
+  get getCount() {
+    return this.count;
+  }
 
-    @computed
-    get getCount() {
-        return this.count;
-    }
-
-    @computed
-    get getName() {
-        return this.name
-    }
+  @computed
+  get getName() {
+    return this.name;
+  }
 }
 
 export default new Mobx();
